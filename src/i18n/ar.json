@@ -1,0 +1,248 @@
+
+{
+  "header": "لوحة الموارد البشرية",
+  "footer": "© 2025 جميع الحقوق محفوظة.",
+  "langToggle": "English",
+  "Collapse sidebar": "طي الشريط الجانبي",
+  "Expand sidebar": "توسيع الشريط الجانبي",
+  "createButton": "إنشاء",
+  "viewDetails": "عرض التفاصيل",
+  "loading": "جاري التحميل",
+  "Back": "عودة",
+  "n/a": "غير متوفر",
+
+  "employees": "الموظفين",
+  "status": "الحالة",
+
+  "allEmployees": "جميع الموظفين",
+  "allEmployeesTable": {
+    "id": "المعرف",
+    "name": "الاسم",
+    "role": "المسمى الوظيفي",
+    "status": "الحالة"
+  },
+
+  "allDepartments": "جميع الأقسام",
+  "createDept": "إنشاء قسم",
+  "allDepartmentsTable": {
+    "id": "المعرف",
+    "name": "اسم القسم",
+    "head": "رئيس القسم"
+  },
+  "departments": {
+    "title": "جميع الأقسام",
+    "addButton": "إضافة قسم",
+    "createTitle": "إنشاء قسم",
+    "createBtn": "إنشاء قسم",
+    "name": "اسم القسم",
+    "head": "رئيس القسم",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "submit": "إنشاء قسم",
+    "submitting": "جاري الإنشاء..."
+  },
+
+  "allTeams": "جميع الفرق",
+  "createTeam": "إنشاء فريق",
+  "allTeamsTable": {
+    "id": "المعرف",
+    "name": "اسم الفريق",
+    "department": "القسم",
+    "membersCount": "الأعضاء"
+  },
+  "teams": {
+    "title": "جميع الفرق",
+    "addButton": "إضافة فريق",
+    "createTitle": "إنشاء فريق",
+    "createBtn": "إنشاء فريق",
+    "name": "اسم الفريق",
+    "department": "القسم",
+    "membersCount": "الأعضاء",
+    "edit": "تعديل",
+    "delete": "حذف"
+  },
+
+  "menu": {
+    "dashboard": "لوحة القيادة",
+    "overview": "النظرة العامة",
+    "employees": "الموظفين",
+    "allEmployees": "جميع الموظفين",
+    "addEmployee": "إضافة موظف",
+    "offboarding": "الانهاء",
+    "departments": "الأقسام والفرق",
+    "allDepartments": "جميع الأقسام",
+    "createDept": "إنشاء قسم",
+    "teams": "الفرق",
+    "allTeams": "جميع الفرق",
+    "createTeam": "إنشاء فريق",
+    "recruitment": "التوظيف",
+    "jobs": "الوظائف الشاغرة",
+    "applicants": "المتقدمون",
+    "interviews": "مراحل المقابلة",
+    "offers": "إدارة العروض",
+    "attendance": "الحضور والإجازات",
+    "timesheets": "تتبع الوقت",
+    "leave": "طلبات الإجازة",
+    "holidays": "تقويم العطلات",
+    "shifts": "جداول الورديات",
+    "payroll": "الرواتب والتعويضات",
+    "grades": "درجات الرواتب",
+    "payslips": "قسائم الرواتب",
+    "adjustments": "المكافآت والخصومات",
+    "performance": "الأداء",
+    "reviews": "التقييمات والتقييمات",
+    "goals": "الأهداف و OKRs",
+    "feedback": "التغذية الراجعة 360°",
+    "learning": "التعلم والتطوير",
+    "courses": "كتالوج التدريب",
+    "enrollments": "المسجّلون",
+    "certifications": "الشهادات",
+    "reports": "التقارير والتحليلات",
+    "turnover": "تقرير الدوران",
+    "diversity": "مؤشرات التنوع",
+    "customReports": "تقارير مخصصة",
+    "admin": "الإدارة",
+    "roles": "أدوار المستخدم والصلاحيات",
+    "company": "إعدادات الشركة",
+    "leavePolicies": "سياسات الإجازات",
+    "integrations": "التكاملات",
+    "account": "حسابي",
+    "profile": "الملف الشخصي",
+    "password": "تغيير كلمة المرور",
+    "notifications": "الإشعارات",
+    "signout": "تسجيل الخروج"
+  },
+
+  "overview": {
+    "title": "نظرة عامة",
+    "welcome": "مرحبًا بك في نظرة عامة على لوحة الموارد البشرية. هنا يمكنك رؤية المقاييس الرئيسية."
+  },
+  "overviewMetrics": {
+    "totalEmployees": "إجمالي الموظفين",
+    "openPositions": "الوظائف الشاغرة",
+    "turnoverRate": "معدل الدوران",
+    "upcomingLeaves": "الإجازات القادمة"
+  },
+  "overviewCharts": {
+    "monthlyHires": "التوظيف الشهري",
+    "leaveRequests": "طلبات الإجازة"
+  },
+
+  "offboarding": {
+    "step1": {
+      "title": "مقابلة الخروج",
+      "description": "حدد موعدًا لإجراء مقابلة الخروج مع الموارد البشرية لمشاركة الملاحظات والأفكار."
+    },
+    "step2": {
+      "title": "إلغاء الوصول إلى النظام",
+      "description": "ستقوم تقنية المعلومات بإزالة وصولك إلى الأنظمة الداخلية والبريد الإلكتروني ومستودعات المشروع."
+    },
+    "step3": {
+      "title": "إرجاع ممتلكات الشركة",
+      "description": "يرجى إعادة الكمبيوتر المحمول وبطاقة الدخول والمفاتيح وأي معدات أخرى صادرة عن الشركة."
+    },
+    "step4": {
+      "title": "إتمام الرواتب والمزايا",
+      "description": "تأكد من إكمال جميع إجراءات الرواتب والشيك النهائي وأوراق المزايا الخاصة بك."
+    }
+  },
+
+  "timeTracking": {
+    "date": "التاريخ",
+    "hours": "الساعات"
+  },
+  "leaveRequests": {
+    "type": "النوع",
+    "period": "الفترة"
+  },
+  "shiftSchedules": {
+    "shift": "الوردية"
+  },
+
+  "salaryGradesTable": {
+    "grade": "الدرجة",
+    "min": "الحد الأدنى للراتب",
+    "max": "الالحد الأقصى للراتب"
+  },
+  "payslipsTable": {
+    "id": "المعرف",
+    "employee": "الموظف",
+    "amount": "المبلغ",
+    "date": "التاريخ"
+  },
+  "adjustmentsTable": {
+    "id": "المعرف",
+    "type": "النوع",
+    "employee": "الموظف",
+    "amount": "المبلغ"
+  },
+
+  "reviewsTable": {
+    "id": "المعرف",
+    "employee": "الموظف",
+    "date": "التاريخ",
+    "score": "التقييم"
+  },
+  "goalsTable": {
+    "owner": "المسؤول"
+  },
+  "feedbackTable": {
+    "from": "من",
+    "to": "إلى"
+  },
+
+  "coursesTable": {
+    "instructor": "المدرب",
+    "duration": "المدة"
+  },
+  "enrollmentsTable": {
+    "id": "المعرف",
+    "employee": "الموظف",
+    "course": "الدورة",
+    "status": "الحالة"
+  },
+
+  "turnoverTable": {
+    "month": "الشهر",
+    "rate": "معدل الدوران"
+  },
+  "diversityTable": {
+    "category": "الفئة",
+    "percent": "النسبة"
+  },
+  "customReports": {
+    "description": "أنشئ تقارير مخصصة لتحليل بيانات الموارد البشرية.",
+    "createButton": "إنشاء تقرير جديد"
+  },
+
+  "rolesTable": {
+    "id": "المعرف",
+    "name": "اسم الدور",
+    "desc": "الوصف"
+  },
+  "companySettings": {
+    "description": "قم بتكوين اسم الشركة والعنوان والإعدادات العامة الأخرى."
+  },
+  "leavePolicy": {
+    "annual": "الإجازة السنوية",
+    "sick": "إجازة مرضية",
+    "days": "أيام"
+  },
+
+  "addEmployee": {
+    "title": "إضافة موظف جديد",
+    "success": "تمّ إضافة الموظف بنجاح!",
+    "error": "فشل في إضافة الموظف، الرجاء المحاولة مرة أخرى.",
+    "name": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "role": "المسمى الوظيفي",
+    "department": "القسم",
+    "startDate": "تاريخ البدء",
+    "status": "الحالة",
+    "statusActive": "نشط",
+    "statusInactive": "غير نشط",
+    "contract": "عقد العمل (PDF)",
+    "submit": "حفظ",
+    "submitting": "جارٍ الحفظ..."
+  }
+}

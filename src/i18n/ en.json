@@ -1,0 +1,225 @@
+{
+  "header": "HR Panel",
+  "footer": "© 2025. All rights reserved.",
+  "langToggle": "اللغة العربية",
+  "Collapse sidebar": "Collapse sidebar",
+  "Expand sidebar": "Expand sidebar",
+  "createButton": "Create",
+  "viewDetails": "View Details",
+  "loading": "Loading",
+  "Back": "Back",
+  "n/a": "N/A",
+
+  "employees": "Employees",
+  "allEmployees": "All Employees",
+  "allEmployeesTable": {
+    "id": "ID",
+    "name": "Name",
+    "role": "Role",
+    "status": "Status"
+  },
+
+  "departments": "Departments & Teams",
+  "allDepartments": "All Departments",
+  "createDept": "Create Department",
+  "allDepartmentsTable": {
+    "id": "ID",
+    "name": "Department Name",
+    "head": "Department Head"
+  },
+
+  "teams": {
+    "title": "All Teams",
+    "addTitle": "Create Team",
+    "addButton": "Add Team",
+    "selectDepartment": "Select Department",
+    "errorLoadingDeps": "Failed to load departments."
+  },
+  "allTeams": "All Teams",
+  "createTeam": "Create Team",
+  "allTeamsTable": {
+    "id": "ID",
+    "name": "Team Name",
+    "department": "Department",
+    "membersCount": "Members"
+  },
+
+  "menu": {
+    "dashboard": "Dashboard",
+    "overview": "Overview",
+    "employees": "Employees",
+    "allEmployees": "All Employees",
+    "addEmployee": "Add Employee",
+    "offboarding": "Offboarding",
+    "departments": "Departments & Teams",
+    "allDepartments": "All Departments",
+    "createDept": "Create Department",
+    "teams": "Teams",
+    "allTeams": "All Teams",
+    "createTeam": "Create Team",
+    "recruitment": "Recruitment",
+    "jobs": "Job Openings",
+    "applicants": "Applicants",
+    "interviews": "Interview Stages",
+    "offers": "Offer Management",
+    "attendance": "Attendance & Leave",
+    "timesheets": "Time Tracking",
+    "leave": "Leave Requests",
+    "holidays": "Holiday Calendar",
+    "shifts": "Shift Schedules",
+    "payroll": "Payroll & Compensation",
+    "grades": "Salary Grades",
+    "payslips": "Payslips",
+    "adjustments": "Bonuses & Deductions",
+    "performance": "Performance",
+    "reviews": "Reviews & Appraisals",
+    "goals": "Goals & OKRs",
+    "feedback": "360° Feedback",
+    "learning": "L&D",
+    "courses": "Training Catalog",
+    "enrollments": "Enrollments",
+    "certifications": "Certifications",
+    "reports": "Reports & Analytics",
+    "turnover": "Turnover Report",
+    "diversity": "Diversity Metrics",
+    "customReports": "Custom Reports",
+    "admin": "Administration",
+    "roles": "User Roles & Permissions",
+    "company": "Company Settings",
+    "leavePolicies": "Leave Policies",
+    "integrations": "Integrations",
+    "account": "My Account",
+    "profile": "Profile",
+    "password": "Change Password",
+    "notifications": "Notifications",
+    "signout": "Sign Out"
+  },
+
+  "overview": {
+    "title": "Overview",
+    "welcome": "Welcome to the HR dashboard overview. Here you can see key metrics."
+  },
+  "overviewMetrics": {
+    "totalEmployees": "Total Employees",
+    "openPositions": "Open Positions",
+    "turnoverRate": "Turnover Rate",
+    "upcomingLeaves": "Upcoming Leaves"
+  },
+  "overviewCharts": {
+    "monthlyHires": "Monthly Hires",
+    "leaveRequests": "Leave Requests"
+  },
+
+  "offboarding": {
+    "step1": {
+      "title": "Exit Interview",
+      "description": "Schedule and complete your exit interview with HR to share feedback and insights."
+    },
+    "step2": {
+      "title": "Revoke System Access",
+      "description": "IT will remove your access to internal systems, email, and project repositories."
+    },
+    "step3": {
+      "title": "Return Company Assets",
+      "description": "Please return your laptop, badge, keys, and any other company-issued equipment."
+    },
+    "step4": {
+      "title": "Finalize Payroll & Benefits",
+      "description": "Ensure all your payroll, final paycheck, and benefits paperwork is completed."
+    }
+  },
+
+  "addEmployee": {
+    "title": "Add New Employee",
+    "success": "Employee created successfully!",
+    "error": "Failed to add employee, please try again.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "role": "Job Title",
+    "department": "Department",
+    "startDate": "Start Date",
+    "status": "Status",
+    "statusActive": "Active",
+    "statusInactive": "Inactive",
+    "contract": "Employment Contract (PDF)",
+    "submit": "Submit",
+    "submitting": "Submitting..."
+  },
+
+  "timeTracking": {
+    "date": "Date",
+    "hours": "Hours"
+  },
+  "leaveRequests": {
+    "type": "Type",
+    "period": "Period"
+  },
+  "shiftSchedules": {
+    "shift": "Shift"
+  },
+  "salaryGradesTable": {
+    "grade": "Grade",
+    "min": "Min Salary",
+    "max": "Max Salary"
+  },
+  "payslipsTable": {
+    "id": "ID",
+    "employee": "Employee",
+    "amount": "Amount",
+    "date": "Date"
+  },
+  "adjustmentsTable": {
+    "id": "ID",
+    "type": "Type",
+    "employee": "Employee",
+    "amount": "Amount"
+  },
+  "reviewsTable": {
+    "id": "ID",
+    "employee": "Employee",
+    "date": "Date",
+    "score": "Score"
+  },
+  "goalsTable": {
+    "owner": "Owner"
+  },
+  "feedbackTable": {
+    "from": "From",
+    "to": "To"
+  },
+  "coursesTable": {
+    "instructor": "Instructor",
+    "duration": "Duration"
+  },
+  "enrollmentsTable": {
+    "id": "ID",
+    "employee": "Employee",
+    "course": "Course",
+    "status": "Status"
+  },
+  "turnoverTable": {
+    "month": "Month",
+    "rate": "Turnover Rate"
+  },
+  "diversityTable": {
+    "category": "Category",
+    "percent": "Percentage"
+  },
+  "customReports": {
+    "description": "Build your own ad-hoc reports to slice and dice HR data.",
+    "createButton": "Create New Report"
+  },
+  "rolesTable": {
+    "id": "ID",
+    "name": "Role Name",
+    "desc": "Description"
+  },
+  "companySettings": {
+    "description": "Configure your company’s name, address, and other global settings."
+  },
+  "leavePolicy": {
+    "annual": "Annual Leave",
+    "sick": "Sick Leave",
+    "days": "days"
+  }
+}
