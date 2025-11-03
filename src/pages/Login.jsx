@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { getFirebaseAuth } from "../firebase";
 import { FiLock, FiMail, FiUser, FiAlertTriangle, FiX } from "react-icons/fi";
 
-const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5002/api";
+const API_BASE =  "https://hr-backend-npbd.onrender.com/api";
 
 const Login = () => {
   const auth = getFirebaseAuth();
