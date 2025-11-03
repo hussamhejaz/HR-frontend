@@ -1,23 +1,23 @@
 // src/components/Sidebar.jsx
-
 import React, { useState, useEffect } from "react";
 import {
-  FiSettings,
+  // FiSettings,
   FiGrid,
   FiChevronDown,
   FiMenu,
   FiUsers,
   FiLayers,
-  FiBriefcase,
+  // FiBriefcase,
   FiClock,
   FiCreditCard,
-  FiActivity,
-  FiBook,
-  FiBarChart2,
+  // FiActivity,
+  // FiBook,
+  // FiBarChart2,
   FiUser,
   FiGlobe,
+  FiLogOut,
 } from "react-icons/fi";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
@@ -25,6 +25,7 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [activeMenu, setActiveMenu] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
@@ -33,6 +34,53 @@ const Sidebar = () => {
 
   const switchLanguage = () =>
     i18n.changeLanguage(i18n.language === "en" ? "ar" : "en");
+
+  // ---- Logout helpers ----
+  const clearTenant = () => {
+    localStorage.removeItem("currentTenantId");
+    localStorage.removeItem("tenantId");
+    localStorage.removeItem("tenant_id");
+  };
+  const clearAuth = () => {
+    localStorage.removeItem("fb_id_token");
+    localStorage.removeItem("idToken");
+    localStorage.removeItem("currentUid");
+  };
+
+  const handleSignOut = async () => {
+    try {
+      // Try Firebase (compat or modular) if present; ignore if not configured
+      if (window.firebase?.auth) {
+        await window.firebase.auth().signOut();
+      } else {
+        try {
+          const mod = await import(/* webpackIgnore: true */ "firebase/auth").catch(() => null);
+          if (mod?.getAuth && mod?.signOut) {
+            const { getAuth, signOut } = mod;
+            await signOut(getAuth());
+          }
+        } catch {}
+      }
+    } catch {
+      // ignore signOut errors; we still clear local state
+    } finally {
+      clearAuth();
+      clearTenant();
+      // Hard navigation ensures in-memory state is reset too
+      try {
+        navigate("/login");
+      } catch {
+        window.location.assign("/login");
+      }
+      // Fallback to home if /login doesn't exist
+      setTimeout(() => {
+        if (!/\/login$/.test(window.location.pathname)) {
+          window.location.assign("/");
+        }
+      }, 50);
+    }
+  };
+  // ------------------------
 
   const menuItems = [
     {
@@ -45,10 +93,9 @@ const Sidebar = () => {
       icon: <FiUsers />,
       sub: [
         { key: "menu.allEmployees", path: "/employees/all" },
-        // { key: "menu.profiles", path: "/employees/profiles" },
-         { key: "menu.addEmployee",  path: "/employees/add" },
-        // { key: "menu.onboarding", path: "/employees/onboarding" },
+        { key: "menu.addEmployee", path: "/employees/add" },
         { key: "menu.offboarding", path: "/employees/offboarding" },
+        { key: "menu.resignations", path: "/employees/resignations" },
       ],
     },
     {
@@ -62,72 +109,79 @@ const Sidebar = () => {
         { key: "menu.createTeam", path: "/teams/create" },
       ],
     },
+    // {
+    //   key: "menu.recruitment",
+    //   icon: <FiBriefcase />,
+    //   sub: [
+    //     { key: "menu.jobs", path: "/recruitment/jobs" },
+    //     { key: "menu.applicants", path: "/recruitment/applicants" },
+    //   ],
+    // },
     {
-      key: "menu.recruitment",
-      icon: <FiBriefcase />,
-      sub: [
-        { key: "menu.jobs", path: "/recruitment/jobs" },
-        { key: "menu.applicants", path: "/recruitment/applicants" },
-        { key: "menu.interviews", path: "/recruitment/interviews" },
-        { key: "menu.offers", path: "/recruitment/offers" },
-      ],
-    },
-    {
-      key: "menu.attendance",
+     key: "menu.attendance",
       icon: <FiClock />,
       sub: [
         { key: "menu.timesheets", path: "/attendance/timesheets" },
         { key: "menu.leave", path: "/attendance/leave" },
-        { key: "menu.holidays", path: "/attendance/holidays" },
+        // { key: "menu.holidays", path: "/attendance/holidays" },
         { key: "menu.shifts", path: "/attendance/shifts" },
+        { key: "menu.attendanceAndDeparture", path: "attendance/admin" } ,
+       {
+          key: "menu.attendanceRecords",
+          label: "Attendance Records",
+          path: "/attendance/records",
+        }
+
       ],
+
     },
     {
       key: "menu.payroll",
       icon: <FiCreditCard />,
       sub: [
         { key: "menu.grades", path: "/payroll/grades" },
-        { key: "menu.payslips", path: "/payroll/payslips" },
+        // { key: "menu.payslips", path: "/payroll/salary-requests" },
+        { key: "menu.Salary requests", path: "/payroll/salary-requests" },
         { key: "menu.adjustments", path: "/payroll/adjustments" },
       ],
     },
-    {
-      key: "menu.performance",
-      icon: <FiActivity />,
-      sub: [
-        { key: "menu.reviews", path: "/performance/reviews" },
-        { key: "menu.goals", path: "/performance/goals" },
-        { key: "menu.feedback", path: "/performance/feedback" },
-      ],
-    },
-    {
-      key: "menu.learning",
-      icon: <FiBook />,
-      sub: [
-        { key: "menu.courses", path: "/learning/courses" },
-        { key: "menu.enrollments", path: "/learning/enrollments" },
-        { key: "menu.certifications", path: "/learning/certifications" },
-      ],
-    },
-    {
-      key: "menu.reports",
-      icon: <FiBarChart2 />,
-      sub: [
-        { key: "menu.turnover", path: "/reports/turnover" },
-        { key: "menu.diversity", path: "/reports/diversity" },
-        { key: "menu.customReports", path: "/reports/custom" },
-      ],
-    },
-    {
-      key: "menu.admin",
-      icon: <FiSettings />,
-      sub: [
-        { key: "menu.roles", path: "/admin/roles" },
-        { key: "menu.company", path: "/admin/company" },
-        { key: "menu.leavePolicies", path: "/admin/leave-policies" },
-        { key: "menu.integrations", path: "/admin/integrations" },
-      ],
-    },
+    // {
+    //   key: "menu.performance",
+    //   icon: <FiActivity />,
+    //   sub: [
+    //     { key: "menu.reviews", path: "/performance/reviews" },
+    //     { key: "menu.goals", path: "/performance/goals" },
+    //     { key: "menu.feedback", path: "/performance/feedback" },
+    //   ],
+    // },
+    // {
+    //   key: "menu.learning",
+    //   icon: <FiBook />,
+    //   sub: [
+    //     { key: "menu.courses", path: "/learning/courses" },
+    //     { key: "menu.enrollments", path: "/learning/enrollments" },
+    //     { key: "menu.certifications", path: "/learning/certifications" },
+    //   ],
+    // },
+    // {
+    //   key: "menu.reports",
+    //   icon: <FiBarChart2 />,
+    //   sub: [
+    //     { key: "menu.turnover", path: "/reports/turnover" },
+    //     { key: "menu.diversity", path: "/reports/diversity" },
+    //     { key: "menu.customReports", path: "/reports/custom" },
+    //   ],
+    // },
+    // {
+    //   key: "menu.admin",
+    //   icon: <FiSettings />,
+    //   sub: [
+    //     { key: "menu.roles", path: "/admin/roles" },
+    //     { key: "menu.company", path: "/admin/company" },
+    //     { key: "menu.leavePolicies", path: "/admin/leave-policies" },
+    //     { key: "menu.integrations", path: "/admin/integrations" },
+    //   ],
+    // },
     {
       key: "menu.account",
       icon: <FiUser />,
@@ -135,7 +189,8 @@ const Sidebar = () => {
         { key: "menu.profile", path: "/account/profile" },
         { key: "menu.password", path: "/account/password" },
         { key: "menu.notifications", path: "/account/notifications" },
-        { key: "menu.signout", path: "/account/signout" },
+        // Turn signout into an ACTION instead of a route
+        { key: "menu.signout", action: handleSignOut, icon: <FiLogOut /> },
         { key: "langToggle", action: switchLanguage, icon: <FiGlobe /> },
       ],
     },

@@ -1,42 +1,119 @@
 {
-  "header": "HR Panel",
-  "footer": "© 2025. All rights reserved.",
-  "langToggle": "اللغة العربية",
+  "header": "HR Dashboard",
+  "footer": "© 2025 All rights reserved.",
+  "langToggle": "Arabic",
   "Collapse sidebar": "Collapse sidebar",
   "Expand sidebar": "Expand sidebar",
   "createButton": "Create",
-  "viewDetails": "View Details",
+  "viewDetails": "View details",
   "loading": "Loading",
   "Back": "Back",
   "n/a": "N/A",
 
   "employees": "Employees",
+  "status": "Status",
+
   "allEmployees": "All Employees",
   "allEmployeesTable": {
     "id": "ID",
     "name": "Name",
-    "role": "Role",
+    "role": "Job Title",
     "status": "Status"
   },
 
-  "departments": "Departments & Teams",
   "allDepartments": "All Departments",
-  "createDept": "Create Department",
   "allDepartmentsTable": {
     "id": "ID",
     "name": "Department Name",
     "head": "Department Head"
   },
 
-  "teams": {
-    "title": "All Teams",
-    "addTitle": "Create Team",
-    "addButton": "Add Team",
-    "selectDepartment": "Select Department",
-    "errorLoadingDeps": "Failed to load departments."
+  "departments": {
+    "title": "All Departments",
+    "addButton": "Add Department",
+    "createTitle": "Create Department",
+    "createSubtitle": "Define a new department, assign a head, and optionally choose a code, color, and location.",
+    "createBtn": "Create Department",
+    "submitting": "Creating…",
+    "errorCreating": "Failed to create department.",
+    "name": "Department Name",
+    "nameHint": "Must be unique.",
+    "namePlaceholder": "e.g., Engineering",
+    "nameTaken": "Department name already exists",
+    "checking": "Checking availability…",
+    "head": "Department Head",
+    "headHint": "Choose a manager or leave it blank for now.",
+    "headPlaceholder": "e.g., Sarah Al-Qahtani",
+    "code": "Code",
+    "codeHint": "Short identifier used in reports.",
+    "codePlaceholder": "ENG",
+    "codeSuggested": "Suggestion: ",
+    "location": "Location",
+    "locationHint": "City, site, or remote.",
+    "locationPlaceholder": "HQ – Riyadh",
+    "description": "Description",
+    "descriptionHint": "What is the scope and responsibility of this department?",
+    "descriptionPlaceholder": "Product engineering, platform, QA…",
+    "color": "Department Color",
+    "colorHint": "Used in charts and tags.",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleting": "Deleting…",
+    "errorLoading": "Failed to load departments.",
+    "errorDeleting": "Failed to delete department.",
+    "confirmDelete": "Delete this department?",
+    "list": {
+      "subtitle": "Manage all company departments",
+      "searchPlaceholder": "Search departments…",
+      "empty": "No departments yet. Create one.",
+      "emptyFiltered": "No departments match your search."
+    }
   },
+
+  "teams": {
+    "addTitle": "Create Team",
+    "subtitle": "Create a team and link it to a department.",
+    "name": "Team Name",
+    "nameHint": "Choose a clear, easy-to-understand name.",
+    "namePlaceholder": "e.g., Mobile Platform",
+    "department": "Department",
+    "selectDepartment": "Select Department",
+    "membersCount": "Members Count",
+    "membersHint": "Approximate number of team members.",
+    "decrement": "Decrease",
+    "increment": "Increase",
+    "submit": "Create Team",
+    "submitting": "Creating…",
+    "created": "Team created successfully.",
+    "errorCreating": "Failed to create team.",
+    "errorLoadingDeps": "Failed to load departments.",
+    "addButton": "Add Team",
+    "editTitle": "Edit Team",
+    "updated": "Team updated successfully",
+    "updateFailed": "Failed to update team. Please try again.",
+    "saving": "Saving Changes...",
+    "deleteFailed": "Failed to delete team. Please try again.",
+    "confirmDelete": "Delete this team?",
+    "manageMembers": "Manage Members",
+    "manageMembersDesc": "Add or remove members from",
+    "membersSaved": "Team members updated successfully",
+    "membersSaveFailed": "Failed to update team members",
+    "savingMembers": "Saving Members...",
+    "searchPlaceholder": "Search teams by name, department, description...",
+    "searchEmployees": "Search employees by name, email, or role...",
+    "available": "Available Employees",
+    "selected": "Team Members",
+    "noneSelected": "No team members selected yet",
+    "noResults": "No employees match your search",
+    "allAdded": "All employees are already in the team",
+    "empty": "No teams yet. Create one.",
+    "errorLoading": "Failed to load teams",
+    "members": "members",
+    "namePlaceholder": "e.g., Mobile Platform Team",
+    "descriptionPlaceholder": "Team responsibilities, goals, or focus areas..."
+  },
+
   "allTeams": "All Teams",
-  "createTeam": "Create Team",
   "allTeamsTable": {
     "id": "ID",
     "name": "Team Name",
@@ -45,6 +122,7 @@
   },
 
   "menu": {
+    "resignations": "Resignations",
     "dashboard": "Dashboard",
     "overview": "Overview",
     "employees": "Employees",
@@ -58,7 +136,7 @@
     "allTeams": "All Teams",
     "createTeam": "Create Team",
     "recruitment": "Recruitment",
-    "jobs": "Job Openings",
+    "jobs": "Open Jobs",
     "applicants": "Applicants",
     "interviews": "Interview Stages",
     "offers": "Offer Management",
@@ -69,13 +147,13 @@
     "shifts": "Shift Schedules",
     "payroll": "Payroll & Compensation",
     "grades": "Salary Grades",
-    "payslips": "Payslips",
+    "Salary requests": "Salary requests",
     "adjustments": "Bonuses & Deductions",
     "performance": "Performance",
-    "reviews": "Reviews & Appraisals",
+    "reviews": "Reviews & Evaluations",
     "goals": "Goals & OKRs",
     "feedback": "360° Feedback",
-    "learning": "L&D",
+    "learning": "Learning & Development",
     "courses": "Training Catalog",
     "enrollments": "Enrollments",
     "certifications": "Certifications",
@@ -92,134 +170,664 @@
     "profile": "Profile",
     "password": "Change Password",
     "notifications": "Notifications",
-    "signout": "Sign Out"
+    "signout": "Sign out",
+    "attendanceAndDeparture": "Attendance & Departure",
+    "attendanceRecords": "Attendance records"
   },
 
   "overview": {
-    "title": "Overview",
-    "welcome": "Welcome to the HR dashboard overview. Here you can see key metrics."
-  },
-  "overviewMetrics": {
-    "totalEmployees": "Total Employees",
-    "openPositions": "Open Positions",
-    "turnoverRate": "Turnover Rate",
-    "upcomingLeaves": "Upcoming Leaves"
-  },
-  "overviewCharts": {
-    "monthlyHires": "Monthly Hires",
-    "leaveRequests": "Leave Requests"
-  },
-
-  "offboarding": {
-    "step1": {
-      "title": "Exit Interview",
-      "description": "Schedule and complete your exit interview with HR to share feedback and insights."
+    "title": "HR Dashboard",
+    "welcome": "Welcome back! Here's what's happening today.",
+    "metrics": {
+      "totalEmployees": "Total Employees",
+      "openPositions": "Open Positions",
+      "turnoverRate": "Turnover Rate",
+      "upcomingLeaves": "Upcoming Leaves",
+      "avgSalary": "Avg Salary",
+      "attendanceRate": "Attendance Rate",
+      "activeEmployees": "active",
+      "acrossDepartments": "Across all departments",
+      "last30Days": "Last 30 days",
+      "next7Days": "Next 7 days",
+      "annualBase": "Annual base salary",
+      "currentMonth": "Current month"
     },
-    "step2": {
-      "title": "Revoke System Access",
-      "description": "IT will remove your access to internal systems, email, and project repositories."
+    "charts": {
+      "hiresVsExits": "Hires vs Exits Trend",
+      "leaveDistribution": "Leave Distribution",
+      "thisMonth": "This Month",
+      "newHires": "New Hires",
+      "exits": "Exits",
+      "timePeriods": {
+        "last6Months": "Last 6 months",
+        "last12Months": "Last 12 months",
+        "yearToDate": "Year to date"
+      }
     },
-    "step3": {
-      "title": "Return Company Assets",
-      "description": "Please return your laptop, badge, keys, and any other company-issued equipment."
+    "department": {
+      "overview": "Department Overview",
+      "employees": "employees"
     },
-    "step4": {
-      "title": "Finalize Payroll & Benefits",
-      "description": "Ensure all your payroll, final paycheck, and benefits paperwork is completed."
+    "quickActions": {
+      "title": "Quick Actions",
+      "processPayroll": "Process Payroll",
+      "scheduleInterview": "Schedule Interview",
+      "approveLeave": "Approve Leave",
+      "generateReport": "Generate Report",
+      "addNewEmployee": "Add New Employee"
+    },
+    "buttons": {
+      "exportReport": "Export Report",
+      "addEmployee": "Add Employee"
+    },
+    "errors": {
+      "authenticationRequired": "Authentication Required",
+      "sessionExpired": "Your session has expired. Please log in again.",
+      "loginToAccess": "Please log in to access the dashboard",
+      "demoMode": "Demo Mode",
+      "showingDemoData": "Could not connect to the server. Showing demo data.",
+      "retryConnection": "Retry Connection",
+      "authOrTenant": "You must be signed in and a tenant must be selected."
+    },
+    "actions": {
+      "goToLogin": "Go to Login",
+      "retry": "Retry"
+    },
+    "loading": "Loading dashboard data...",
+    "leaveTypes": {
+      "annual": "Annual",
+      "sick": "Sick",
+      "emergency": "Emergency",
+      "unpaid": "Unpaid",
+      "other": "Other"
     }
   },
 
   "addEmployee": {
     "title": "Add New Employee",
-    "success": "Employee created successfully!",
+    "success": "Employee added successfully!",
     "error": "Failed to add employee, please try again.",
-    "name": "Full Name",
-    "email": "Email Address",
-    "role": "Job Title",
-    "department": "Department",
-    "startDate": "Start Date",
-    "status": "Status",
-    "statusActive": "Active",
-    "statusInactive": "Inactive",
-    "contract": "Employment Contract (PDF)",
-    "submit": "Submit",
-    "submitting": "Submitting..."
+    "sections": {
+      "personal": "Personal Information",
+      "job": "Job Information",
+      "payroll": "Payroll Information",
+      "documents": "Documents"
+    },
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "gender": "Gender",
+      "dob": "Date of Birth",
+      "nationality": "Nationality",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "department": "Department",
+      "role": "Job Title",
+      "contractStartDate": "Contract Start Date",
+      "employeeType": "Employment Type",
+      "status": "Status",
+      "contractEndDate": "Contract End Date",
+      "salary": "Salary",
+      "payFrequency": "Pay Frequency",
+      "bankName": "Bank Name",
+      "accountNumber": "Account Number",
+      "iban": "IBAN",
+      "profilePic": "Profile Picture",
+      "idDoc": "ID / Passport"
+    },
+    "placeholders": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "nationality": "Nationality",
+      "phone": "Phone number",
+      "email": "Email address",
+      "address": "Full address",
+      "department": "e.g., IT, HR",
+      "role": "e.g., Software Engineer",
+      "salary": "Salary amount",
+      "bankName": "Bank name",
+      "accountNumber": "Bank account number",
+      "iban": "IBAN"
+    },
+    "hints": {
+      "dob": "Used for age verification and employee records.",
+      "contractStartDate": "Employee's first working day per contract.",
+      "contractEndDate": "Last day of the contract (leave empty if permanent).",
+      "profilePic": "Upload an official profile photo for the employee record.",
+      "idDoc": "Upload a government ID or passport for identity verification."
+    },
+    "options": {
+      "gender": { "select": "Select Gender", "male": "Male", "female": "Female" },
+      "employeeType": { "fullTime": "Full-time", "partTime": "Part-time", "contract": "Contract", "intern": "Intern" },
+      "status": { "active": "Active", "probation": "Probation", "terminated": "Terminated" },
+      "payFrequency": { "monthly": "Monthly", "weekly": "Weekly", "hourly": "Hourly" }
+    },
+    "buttons": { "submit": "Add Employee", "submitting": "Adding employee..." }
   },
 
   "timeTracking": {
+    "status": {
+      "Pending": "Pending",
+      "Approved": "Approved", 
+      "Rejected": "Rejected"
+    },
+    "viewNotes": "View Notes",
+    "updateNotePrompt": "Add an optional note for this update",
+    "errorProgress": "Failed to update progress.",
+    "completed": "Completion",
+    "markCompleted": "Mark as completed",
+    "completionNote": "Completion Notes",
+    "employee": "Employee",
+    "notes": "Notes",
+    "workNotes": "Work Notes",
+    "completionNotes": "Completion Notes",
+    "noNotes": "No notes provided",
+    "noCompletionNotes": "No completion notes",
+    "entryDetails": "Entry Details",
+    "subtitle": "Track hours by employee, project, and status",
+    "new": "New time entry",
+    "edit": "Edit time entry",
     "date": "Date",
-    "hours": "Hours"
+    "project": "Project",
+    "task": "Task",
+    "hours": "Hours",
+    "search": "Search by employees, projects, or tasks...",
+    "from": "From date",
+    "to": "To date",
+    "empty": "No time entries",
+    "errorLoading": "Failed to load time entries.",
+    "errorSaving": "Failed to save time entry.",
+    "errorStatus": "Failed to update status.",
+    "confirmDelete": "Delete this time entry?",
+    "hoursByEmployee": "Hours by employee",
+    "selectEmployee": "Select employee"
   },
-  "leaveRequests": {
-    "type": "Type",
-    "period": "Period"
+
+  "actions": {
+    "apply": "Apply Filters",
+    "reset": "Reset All",
+    "markDone": "Mark Done",
+    "markNotDone": "Mark Not Done",
+    "approve": "Approve",
+    "reject": "Reject",
+    "saving": "Saving...",
+    "deleting": "Deleting...",
+    "filter": "Filters",
+    "addEmployee": "Add Employee",
+    "quickView": "Quick View",
+    "view": "View",
+    "viewFullProfile": "View Full Profile",
+    "close": "Close",
+    "results": "results",
+    "prev": "Previous",
+    "next": "Next",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleting": "Deleting…",
+    "save": "Save changes",
+    "create": "Create",
+    "refresh": "Refresh"
   },
+
+   "filters": "Filters",
+  "filtersSection": {
+    "searchPlaceholder": "Search by name, email, or title…",
+    "all": "All",
+    "completed": {
+      "all": "All",
+      "done": "Done",
+      "not_done": "Not Done"
+    },
+    "status": {
+      "all": "All Statuses",
+      "active": "Active",
+      "probation": "Probation",
+      "terminated": "Terminated", 
+      "inactive": "Inactive"
+    },
+    "type": {
+      "all": "All types",
+      "fullTime": "Full-time",
+      "partTime": "Part-time",
+      "contract": "Contract",
+      "intern": "Intern"
+    }
+  },
+
+  "labels": {
+    "done": "Done",
+    "notDone": "Not done"
+  },
+
+  "holidayCalendar": {
+    "title": "Holiday Calendar",
+    "new": "New Holiday",
+    "name": "Name",
+    "date": "Date",
+    "create": "Create Holiday",
+    "edit": "Edit Holiday",
+    "modalSubtitle": "Fill required fields",
+    "placeholders": {
+      "name": "e.g., National Day"
+    },
+    "confirmDelete": "Delete this holiday?",
+    "errorLoading": "Failed to load holidays.",
+    "errorSaving": "Failed to save holiday.",
+    "errorDeleting": "Failed to delete holiday."
+  },
+
   "shiftSchedules": {
-    "shift": "Shift"
-  },
-  "salaryGradesTable": {
-    "grade": "Grade",
-    "min": "Min Salary",
-    "max": "Max Salary"
-  },
-  "payslipsTable": {
-    "id": "ID",
+    "title": "Shift Schedules",
+    "new": "New Shift",
+    "create": "Create Shift",
+    "edit": "Edit Shift",
+    "modalSubtitle": "Fill required fields",
     "employee": "Employee",
-    "amount": "Amount",
-    "date": "Date"
-  },
-  "adjustmentsTable": {
-    "id": "ID",
-    "type": "Type",
-    "employee": "Employee",
-    "amount": "Amount"
-  },
-  "reviewsTable": {
-    "id": "ID",
-    "employee": "Employee",
-    "date": "Date",
-    "score": "Score"
-  },
-  "goalsTable": {
-    "owner": "Owner"
-  },
-  "feedbackTable": {
+    "shift": "Shift",
     "from": "From",
-    "to": "To"
+    "to": "To",
+    "dateFrom": "From (Date)",
+    "dateTo": "To (Date)",
+    "confirmDelete": "Delete this shift?",
+    "placeholders": { "employee": "e.g., Alice Johnson" },
+    "errorLoading": "Failed to load shifts.",
+    "errorSaving": "Failed to save shift.",
+    "errorDeleting": "Failed to delete shift.",
+    "validation": {
+      "time": "Start and End are required.",
+      "order": "Start time must be before End time."
+    }
   },
-  "coursesTable": {
-    "instructor": "Instructor",
-    "duration": "Duration"
+
+  "common": {
+    "optional": "Optional",
+    "required": "Required",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "update": "Update",
+    "submit": "Submit",
+    "reset": "Reset",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "download": "Download",
+    "upload": "Upload",
+    "confirm": "Confirm",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Information",
+    "loading": "Loading...",
+    "noData": "No data available",
+    "noResults": "No results found",
+    "refresh": "Refresh",
+    "submittedAt": "Submitted",
+    "working": "Working…",
+    "close": "Close",
+    "from": "From",
+    "to": "To",
+    "details": "Details",
+    "summary": "Summary",
+    "thisMonth": "This month",
+    "perSettings": "per settings",
+    "minutes": "minutes",
+    "yes": "Yes"
   },
-  "enrollmentsTable": {
-    "id": "ID",
-    "employee": "Employee",
-    "course": "Course",
-    "status": "Status"
-  },
-  "turnoverTable": {
-    "month": "Month",
-    "rate": "Turnover Rate"
-  },
-  "diversityTable": {
-    "category": "Category",
-    "percent": "Percentage"
-  },
+
+  "leaveRequests": { "type": "Type", "period": "Period" },
+
+  "salaryGradesTable": { "grade": "Grade", "min": "Minimum Salary", "max": "Maximum Salary" },
+  "payslipsTable": { "id": "ID", "employee": "Employee", "amount": "Amount", "date": "Date" },
+  "adjustmentsTable": { "id": "ID", "type": "Type", "employee": "Employee", "amount": "Amount" },
+
+  "reviewsTable": { "id": "ID", "employee": "Employee", "date": "Date", "score": "Score" },
+  "goalsTable": { "owner": "Owner" },
+  "feedbackTable": { "from": "From", "to": "To" },
+
+  "coursesTable": { "instructor": "Instructor", "duration": "Duration" },
+  "enrollmentsTable": { "id": "ID", "employee": "Employee", "course": "Course", "status": "Status" },
+
+  "turnoverTable": { "month": "Month", "rate": "Turnover Rate" },
+  "diversityTable": { "category": "Category", "percent": "Percent" },
   "customReports": {
-    "description": "Build your own ad-hoc reports to slice and dice HR data.",
+    "description": "Create custom reports to analyze HR data.",
     "createButton": "Create New Report"
   },
-  "rolesTable": {
-    "id": "ID",
-    "name": "Role Name",
-    "desc": "Description"
+
+  "rolesTable": { "id": "ID", "name": "Role Name", "desc": "Description" },
+  "companySettings": { "description": "Configure company name, address, and other general settings." },
+  "leavePolicy": { "annual": "Annual Leave", "sick": "Sick Leave", "days": "Days" },
+
+  "errors": {
+    "loadEmployees": "Failed to load employee list.",
+    "employeeNotFound": "Employee not found.",
+    "loadFailed": "Failed to load data.",
+    "createFailed": "Failed to create adjustments.",
+    "authOrTenant": "You must be signed in and a tenant must be selected."
   },
-  "companySettings": {
-    "description": "Configure your company’s name, address, and other global settings."
+
+  "table": {
+    "employee": "Employee",
+    "department": "Department",
+    "type": "Type",
+    "status": "Status",
+    "actions": "Actions"
   },
-  "leavePolicy": {
-    "annual": "Annual Leave",
-    "sick": "Sick Leave",
-    "days": "days"
+
+  "messages": {
+    "noMatches": "No results match your filters.",
+    "noEmployees": "No employees yet. Add the first employee."
+  },
+
+  "quick": {
+    "job": "Job",
+    "contact": "Contact",
+    "type": "Employment Type",
+    "status": "Status",
+    "start": "Start Date",
+    "end": "End Date",
+    "email": "Email",
+    "phone": "Phone",
+    "nationality": "Nationality",
+    "notes": "Notes"
+  },
+
+  "details": {
+    "job": "Job",
+    "personal": "Personal & Contact",
+    "payroll": "Payroll",
+    "documents": "Documents",
+    "open": "Open"
+  },
+
+  "fields": {
+    "employeeType": "Employment Type",
+    "status": "Status",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "email": "Email",
+    "phone": "Phone",
+    "nationality": "Nationality",
+    "address": "Address",
+    "dob": "Date of Birth",
+    "iban": "IBAN",
+    "salary": "Salary",
+    "payFrequency": "Pay Frequency",
+    "bankName": "Bank Name",
+    "accountNumber": "Account Number",
+    "contract": "Contract",
+    "profilePic": "Profile Picture",
+    "idDoc": "ID / Passport"
+  },
+
+  "payFreq": { "monthly": "Monthly", "weekly": "Weekly", "hourly": "Hourly" },
+
+  "offboarding": {
+    "title": "Offboarding",
+    "flow": {
+      "step1": { "title": "Disable Access & Notify Stakeholders", "description": "Disable accounts, inform stakeholders, and prepare for handover." },
+      "step2": { "title": "Collect Company Assets", "description": "Laptop, access card, keys, phone, and any other equipment." },
+      "step3": { "title": "Handover", "description": "Confirm knowledge transfer and assign a recipient." },
+      "step4": { "title": "Final Settlement", "description": "Clear payroll, benefits, and end-of-service if applicable." }
+    },
+    "form": {
+      "cardTitle": "Employee Offboarding",
+      "employee": "Employee",
+      "selectEmployee": "Select Employee",
+      "chooseEmployee": "Choose the employee to offboard.",
+      "lastDay": "Last Working Day",
+      "lastDayHint": "The employee's last day (will be saved as contract end date).",
+      "reason": "Reason",
+      "reasons": {
+        "endOfContract": "End of Contract",
+        "resignation": "Resignation",
+        "termination": "Termination",
+        "retirement": "Retirement",
+        "other": "Other"
+      },
+      "reasonHint": "Why is the employee leaving?",
+      "noticeServed": "Was the notice period served?",
+      "yes": "Yes",
+      "no": "No",
+      "noticeHint": "Indicate if the contract's notice period was fulfilled.",
+      "handoverTo": "Handover To",
+      "handoverPlaceholder": "Recipient/team name or email",
+      "handoverHint": "Who will take over responsibilities?",
+      "notes": "Notes",
+      "notesPlaceholder": "Any special instructions or notes",
+      "notesHint": "Optional notes about the offboarding.",
+      "checklistTitle": "Checklist",
+      "assetsReturned": "Company assets returned",
+      "emailDisabled": "Email and accounts disabled",
+      "accessRevoked": "System access revoked",
+      "payrollCleared": "Payroll and benefits settled",
+      "exitInterviewDone": "Exit interview completed",
+      "reset": "Reset",
+      "submit": "Complete Offboarding",
+      "processing": "Processing…",
+      "summaryTitle": "Quick Review",
+      "summaryEmployee": "Employee",
+      "summaryLastDay": "Last Working Day",
+      "summaryReason": "Reason",
+      "summaryHandover": "Handover To"
+    },
+    "messages": {
+      "success": "Offboarding completed successfully.",
+      "error": "Failed to complete offboarding.",
+      "validation": {
+        "employeeRequired": "Please select an employee.",
+        "lastDayRequired": "Please specify the last working day.",
+        "lastDayBeforeStart": "Last working day cannot be before the employee's start date."
+      }
+    },
+    "section": {
+      "title": "Offboarding",
+      "loadError": "Failed to load offboarding records.",
+      "statusLabel": "Status",
+      "status": { "active": "Active", "completed": "Completed", "canceled": "Canceled" },
+      "noneTitle": "No Offboarding",
+      "noneDesc": "This employee is not scheduled for offboarding.",
+      "edit": "Edit",
+      "cancel": "Cancel Offboarding",
+      "editTitle": "Edit Offboarding",
+      "save": "Save changes",
+      "updateFailed": "Failed to update offboarding.",
+      "cancelTitle": "Cancel this offboarding?",
+      "cancelDesc": "The process will be marked as canceled. You can also revert the employee status to Active.",
+      "cancelRevert": "Revert employee status to Active and clear end date as well",
+      "cancelFailed": "Failed to cancel offboarding.",
+      "confirmCancel": "Confirm Cancel"
+    }
+  },
+
+  "editEmployee": {
+    "title": "Edit Employee",
+    "open": "Edit",
+    "save": "Save",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "success": "Employee updated.",
+    "error": "Failed to update employee.",
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "department": "Department",
+      "role": "Job Title",
+      "status": "Status",
+      "employeeType": "Employment Type"
+    }
+  },
+
+  "confirmDelete": "Delete this entry?",
+
+  "resignations": {
+    "title": "Resignations",
+    "introAdmin": "Review, approve or reject employee resignations. Attachments are visible in the drawer.",
+    "introMine": "Below are your resignation submissions.",
+    "search": "Search",
+    "searchPh": "Name, email, reason, phone, status…",
+    "employee": "Employee",
+    "type": "Type",
+    "lastDay": "Last day",
+    "status": "Status",
+    "submitted": "Submitted",
+    "actions": "Actions",
+    "noResults": "No results",
+    "view": "View",
+    "approve": "Approve",
+    "reject": "Reject",
+    "cancel": "Cancel",
+    "confirmCancel": "Cancel this resignation?",
+    "details": "Resignation details",
+    "noticeDays": "Notice days",
+    "reason": "Reason / notes",
+    "handoverPlan": "Handover plan",
+    "attachments": "Attachments",
+    "notesToEmployee": "Notes to employee (optional)",
+    "notesPlaceholder": "Add a short note with your decision",
+    "alreadyDecided": "This resignation has already been decided."
+  },
+
+  "adjustments": {
+    "month": "Month",
+    "search": "Search employee",
+    "searchPh": "Type a name…",
+    "onlyWith": "Show only with deductions",
+    "sortBy": "Sort by",
+    "total": "Total deduction",
+    "name": "Name",
+    "toggleOrder": "Toggle order",
+    "shiftRules": "Shift & Late Rules",
+    "useShifts": "Use shifts (if available)",
+    "workweek": "Workweek",
+    "sunThu": "Sun–Thu (GCC)",
+    "monFri": "Mon–Fri",
+    "shiftStart": "Default shift start",
+    "grace": "Grace (min)",
+    "ratePerMinute": "Rate per late minute",
+    "absenceRules": "Absence Rules",
+    "mode": "Mode",
+    "dailySalary": "Daily salary (base/workingDays)",
+    "fixedAmount": "Fixed amount per day",
+    "workingDays": "Working days in month",
+    "usesBaseSalary": "Uses each employee's base salary",
+    "fixedPerDay": "Fixed per absence day",
+    "holidays": "Holidays",
+    "useServerHolidays": "Use server holiday calendar (if available)",
+    "manualHolidays": "Manual holidays (one date per line, YYYY-MM-DD)",
+    "holidaysPlaceholder": "2025-09-23\n2025-06-15\n2025-06-16",
+    "holidayNote": "Holidays are excluded from absence counting.",
+    "creating": "Creating…",
+    "createBtn": "Create adjustments",
+    "exportCsv": "Export CSV",
+    "created": "Adjustments created successfully.",
+    "attendanceDeduction": "Attendance deduction",
+    "capped": "Capped by policy",
+    "cappedShort": "cap",
+    "policySnapshot": "Policy snapshot",
+    "holidayCount": "Holiday count in range",
+    "lateExplanation": "Late = check-in after shift start minus {grace} minutes grace. If no shift that day, default start is used."
+  },
+
+  "Sum": {
+    "Employees": "Employees affected",
+    "Absences": "Absences (days)",
+    "LateMinutes": "Late minutes",
+    "AdvancesCount": "Advances (this month)",
+    "AdvancesTotal": "Advances total (this month)",
+    "TotalDeduction": "Total deduction"
+  },
+
+  "adjustmentsTable": {
+    "employee": "Employee",
+    "baseSalary": "Base salary",
+    "netPay": "Net pay",
+    "total": "Total deduction",
+    "absenceDeduction": "Absence deduction",
+    "lateDeduction": "Late deduction",
+    "absences": "Absences",
+    "lateMinutes": "Late minutes",
+    "lateCount": "Late days",
+    "advances": "Advances"
+  },
+
+  "detailsDrawer": {
+    "nonWorking": "Non-working",
+    "holiday": "Holiday",
+    "weekend": "Weekend",
+    "unpaidLeaveFull": "Unpaid leave (1.0)",
+    "unpaidLeaveHalf": "Unpaid half-day (0.5)",
+    "absent": "Absent",
+    "lateMinutes": "Late {minutes} min",
+    "onTime": "On time",
+    "note": "Note",
+    "checkOut": "Check-out",
+    "checkIn": "Check-in",
+    "shift": "Shift",
+    "date": "Date"
+  },
+  "allEmployees": "All Employees",
+  "n/a": "N/A",
+
+  "filters": {
+    "searchPlaceholder": "Search by name, email, role or department…",
+    "status": {
+      "all": "All statuses",
+      "active": "Active",
+      "probation": "Probation",
+      "terminated": "Terminated",
+      "inactive": "Inactive"
+    },
+    "type": {
+      "all": "All types",
+      "fullTime": "Full-time",
+      "partTime": "Part-time",
+      "contract": "Contract",
+      "intern": "Intern"
+    }
+  },
+
+  "table": {
+    "employee": "Employee",
+    "department": "Department",
+    "type": "Type",
+    "status": "Status",
+    "actions": "Actions"
+  },
+
+  "actions": {
+    "addEmployee": "Add Employee",
+    "quickView": "Quick View",
+    "view": "View",
+    "viewFullProfile": "View Full Profile",
+    "close": "Close",
+    "results": "results",
+    "prev": "Previous",
+    "next": "Next"
+  },
+
+  "messages": {
+    "noMatches": "No results match your filters.",
+    "noEmployees": "No employees yet. Add the first employee."
+  },
+
+  "quick": {
+    "job": "Job",
+    "contact": "Contact",
+    "type": "Employment Type",
+    "status": "Status",
+    "start": "Start Date",
+    "end": "End Date",
+    "email": "Email",
+    "phone": "Phone",
+    "nationality": "Nationality"
   }
 }

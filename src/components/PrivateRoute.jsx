@@ -1,13 +1,28 @@
+// src/components/PrivateRoute.jsx
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase";
+import { getFirebaseAuth } from "../firebase";
+import { isTokenExpired } from "../utils/jwt";
+import CircularLoader from "./CircularLoader";
 
 const PrivateRoute = ({ children }) => {
+  const auth = getFirebaseAuth();
   const [user, loading] = useAuthState(auth);
+  const loc = useLocation();
 
-  if (loading) return <p>Loading…</p>;
-  if (!user)   return <Navigate to="/login" replace />;
+  if (loading) return <CircularLoader />;
+
+  const token = localStorage.getItem("fb_id_token");
+  const expired = !token || isTokenExpired(token);
+
+  if (!user || expired) {
+    const q = new URLSearchParams({
+      reason: !user ? "signedout" : "expired",
+      from: loc.pathname,
+    }).toString();
+    return <Navigate to={`/login?${q}`} replace />;
+  }
 
   return children;
 };

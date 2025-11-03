@@ -1,7 +1,8 @@
 // src/App.js
-
-import React from "react";
+import React, { useEffect, useMemo } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import Layout       from "./Layout";
 import Login        from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
@@ -10,34 +11,38 @@ import PrivateRoute from "./components/PrivateRoute";
 import Overview from "./pages/Overview";
 
 // Employees
-import AllEmployees  from "./pages/employees/AllEmployees";
-import AddEmployee   from "./pages/employees/AddEmployee";      // ← new
-import Offboarding   from "./pages/employees/Offboarding";
+import AllEmployees     from "./pages/employees/AllEmployees";
+import AddEmployee      from "./pages/employees/AddEmployee";
+import EmployeeDetails  from "./pages/employees/EmployeeDetails";
+import Offboarding      from "./pages/employees/Offboarding";
+import Resignations     from "./pages/employees/Resignations";
 
 // Departments
-import AllDepartments    from "./pages/departments/AllDepartments";
-import CreateDepartment  from "./pages/departments/CreateDepartment";
+import AllDepartments   from "./pages/departments/AllDepartments";
+import CreateDepartment from "./pages/departments/CreateDepartment";
+import EditDepartment   from "./pages/departments/EditDepartment";
 
 // Teams
-import AllTeams    from "./pages/teams/AllTeams";
-import CreateTeam  from "./pages/teams/CreateTeam";
+import AllTeams   from "./pages/teams/AllTeams";
+import CreateTeam from "./pages/teams/CreateTeam";
 
-// Recruitment
-import JobOpenings     from "./pages/recruitment/JobOpenings";
-import Applicants      from "./pages/recruitment/Applicants";
-import InterviewStages from "./pages/recruitment/InterviewStages";
-import OfferManagement from "./pages/recruitment/OfferManagement";
+// Recruitment (internal)
+import JobOpenings from "./pages/recruitment/JobOpenings";
+import Applicants  from "./pages/recruitment/Applicants";
+// import OfferManagement from "./pages/recruitment/OfferManagement";
 
 // Attendance & Leave
-import TimeTracking    from "./pages/attendance/TimeTracking";
-import LeaveRequests   from "./pages/attendance/LeaveRequests";
-import HolidayCalendar from "./pages/attendance/HolidayCalendar";
-import ShiftSchedules  from "./pages/attendance/ShiftSchedules";
+import TimeTracking       from "./pages/attendance/TimeTracking";
+import LeaveRequests      from "./pages/attendance/LeaveRequests";
+// import HolidayCalendar  from "./pages/attendance/HolidayCalendar";
+import ShiftSchedules     from "./pages/attendance/ShiftSchedules";
+import AttendanceAdmin    from "./pages/attendance/AttendanceAdmin";
+import AttendanceOverview from "./pages/attendance/AttendanceOverview";
 
 // Payroll & Compensation
-import SalaryGrades from "./pages/payroll/SalaryGrades";
-import Payslips     from "./pages/payroll/Payslips";
-import Adjustments  from "./pages/payroll/Adjustments";
+import SalaryGrades   from "./pages/payroll/SalaryGrades";
+import SalaryRequests from "./pages/payroll/salaryRequests";
+import Adjustments    from "./pages/payroll/Adjustments";
 
 // Performance
 import Reviews  from "./pages/performance/Reviews";
@@ -50,23 +55,70 @@ import Enrollments    from "./pages/learning/Enrollments";
 import Certifications from "./pages/learning/Certifications";
 
 // Reports & Analytics
-import TurnoverReport  from "./pages/reports/TurnoverReport";
+import TurnoverReport   from "./pages/reports/TurnoverReport";
 import DiversityMetrics from "./pages/reports/DiversityMetrics";
 import CustomReports    from "./pages/reports/CustomReports";
 
 // Administration
-import Roles         from "./pages/admin/Roles";
+import Roles           from "./pages/admin/Roles";
 import CompanySettings from "./pages/admin/CompanySettings";
 import LeavePolicies   from "./pages/admin/LeavePolicies";
 import Integrations    from "./pages/admin/Integrations";
 
+// 🔓 PUBLIC (external)
+import Careers  from "./pages/public/Careers";
+import ApplyJob from "./pages/public/ApplyJob";
+
+// 🔒 SUPER ADMIN (separate portal)
+import TenantsDashboard        from "./pages/superadmin/TenantsDashboard";
+import SuperAdminLogin         from "./pages/superadmin/SuperAdminLogin";
+import SuperAdminPrivateRoute  from "./components/SuperAdminPrivateRoute";
+import SuperAdminLayout        from "./pages/superadmin/SuperAdminLayout";
+
+const RTL_LANGS = new Set(["ar", "he", "fa", "ur"]);
+
 function App() {
+  const { i18n } = useTranslation();
+
+  // Stable computed values -> no exhaustive-deps warning
+  const { lang, dir } = useMemo(() => {
+    const lng = i18n.resolvedLanguage || i18n.language || "en";
+    const base = lng.split("-")[0].toLowerCase();
+    const d = RTL_LANGS.has(base) ? "rtl" : "ltr";
+    return { lang: lng, dir: d };
+  }, [i18n.resolvedLanguage, i18n.language]);
+
+  useEffect(() => {
+    const html = document.documentElement;
+    html.setAttribute("dir", dir);
+    html.setAttribute("lang", lang);
+    document.body.classList.toggle("rtl", dir === "rtl"); // optional helper class
+  }, [dir, lang]);
+
   return (
     <Routes>
-      {/* Public */}
+      {/* PUBLIC (tenant) */}
       <Route path="/login" element={<Login />} />
+      <Route path="/careers" element={<Careers />} />
+      <Route path="/apply/:jobId" element={<ApplyJob />} />
 
-      {/* Protected */}
+      {/* PUBLIC (superadmin) */}
+      <Route path="/superadmin/login" element={<SuperAdminLogin />} />
+
+      {/* PROTECTED (superadmin) */}
+      <Route
+        path="/superadmin"
+        element={
+          <SuperAdminPrivateRoute>
+            <SuperAdminLayout />
+          </SuperAdminPrivateRoute>
+        }
+      >
+        <Route index element={<Navigate to="tenants" replace />} />
+        <Route path="tenants" element={<TenantsDashboard />} />
+      </Route>
+
+      {/* PROTECTED (tenant area) */}
       <Route
         path="/"
         element={
@@ -75,88 +127,82 @@ function App() {
           </PrivateRoute>
         }
       >
-        {/* Redirect to overview */}
         <Route index element={<Navigate to="dashboard/overview" replace />} />
 
-        {/* Dashboard */}
         <Route path="dashboard">
           <Route path="overview" element={<Overview />} />
         </Route>
 
-        {/* Employees */}
         <Route path="employees">
-          <Route path="all"    element={<AllEmployees />} />
-          <Route path="add"    element={<AddEmployee />} />
+          <Route path="all" element={<AllEmployees />} />
+          <Route path="add" element={<AddEmployee />} />
+          <Route path="profiles/:id" element={<EmployeeDetails />} />
           <Route path="offboarding" element={<Offboarding />} />
+          <Route path="profiles/:id/offboarding" element={<Offboarding />} />
+          <Route path="resignations" element={<Resignations />} />
         </Route>
 
-        {/* Departments */}
         <Route path="departments">
-          <Route path="all"    element={<AllDepartments />} />
+          <Route path="all" element={<AllDepartments />} />
           <Route path="create" element={<CreateDepartment />} />
+          <Route path="edit/:id" element={<EditDepartment />} />
         </Route>
 
-        {/* Teams */}
         <Route path="teams">
-          <Route path="all"    element={<AllTeams />} />
+          <Route path="all" element={<AllTeams />} />
           <Route path="create" element={<CreateTeam />} />
         </Route>
 
-        {/* Recruitment */}
         <Route path="recruitment">
-          <Route path="jobs"       element={<JobOpenings />} />
+          <Route path="jobs" element={<JobOpenings />} />
           <Route path="applicants" element={<Applicants />} />
-          <Route path="interviews" element={<InterviewStages />} />
-          <Route path="offers"     element={<OfferManagement />} />
+          {/* <Route path="offers" element={<OfferManagement />} /> */}
         </Route>
 
-        {/* Attendance & Leave */}
         <Route path="attendance">
           <Route path="timesheets" element={<TimeTracking />} />
-          <Route path="leave"      element={<LeaveRequests />} />
-          <Route path="holidays"   element={<HolidayCalendar />} />
-          <Route path="shifts"     element={<ShiftSchedules />} />
+          <Route path="leave" element={<LeaveRequests />} />
+          {/* <Route path="holidays" element={<HolidayCalendar />} /> */}
+          <Route path="shifts" element={<ShiftSchedules />} />
+          <Route path="admin" element={<AttendanceAdmin />} />
+          {/* NOTE: nested path should be relative */}
+          <Route path="records" element={<AttendanceOverview />} />
         </Route>
 
-        {/* Payroll & Compensation */}
         <Route path="payroll">
-          <Route path="grades"      element={<SalaryGrades />} />
-          <Route path="payslips"    element={<Payslips />} />
+          <Route path="grades" element={<SalaryGrades />} />
+          <Route path="salary-requests" element={<SalaryRequests />} />
           <Route path="adjustments" element={<Adjustments />} />
         </Route>
 
-        {/* Performance */}
         <Route path="performance">
-          <Route path="reviews"  element={<Reviews />} />
-          <Route path="goals"    element={<Goals />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="goals" element={<Goals />} />
           <Route path="feedback" element={<Feedback />} />
         </Route>
 
-        {/* Learning & Development */}
         <Route path="learning">
-          <Route path="courses"        element={<Courses />} />
-          <Route path="enrollments"    element={<Enrollments />} />
+          <Route path="courses" element={<Courses />} />
+          <Route path="enrollments" element={<Enrollments />} />
           <Route path="certifications" element={<Certifications />} />
         </Route>
 
-        {/* Reports & Analytics */}
         <Route path="reports">
           <Route path="turnover" element={<TurnoverReport />} />
           <Route path="diversity" element={<DiversityMetrics />} />
-          <Route path="custom"   element={<CustomReports />} />
+          <Route path="custom" element={<CustomReports />} />
         </Route>
 
-        {/* Administration */}
         <Route path="admin">
-          <Route path="roles"          element={<Roles />} />
-          <Route path="company"        element={<CompanySettings />} />
+          <Route path="roles" element={<Roles />} />
+          <Route path="company" element={<CompanySettings />} />
           <Route path="leave-policies" element={<LeavePolicies />} />
-          <Route path="integrations"   element={<Integrations />} />
+          <Route path="integrations" element={<Integrations />} />
         </Route>
       </Route>
 
       {/* Fallback */}
-      <Route path="*" element={<Navigate to="/login" replace />} />
+      <Route path="*" element={<Navigate to="/careers" replace />} />
     </Routes>
   );
 }
