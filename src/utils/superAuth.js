@@ -37,7 +37,8 @@ export function getSuperadminSession() {
       if (!user) return resolve({ ok: false, error: "no-user" });
       try {
         const idToken = await user.getIdToken(true);
-        const resp = await fetch(`${API_BASE}/superadmin/me`, {
+        // FIX: Add /api prefix
+        const resp = await fetch(`${API_BASE}/api/superadmin/me`, {
           headers: { Authorization: `Bearer ${idToken}` },
         });
         if (!resp.ok) {
@@ -54,7 +55,8 @@ export function getSuperadminSession() {
 
 /** Superadmin-only: list tenants */
 export async function fetchTenantsSuper(idToken) {
-  const r = await fetch(`${API_BASE}/superadmin/tenants`, {
+  // FIX: Add /api prefix
+  const r = await fetch(`${API_BASE}/api/superadmin/tenants`, {
     headers: { Authorization: `Bearer ${idToken}` },
   });
   if (!r.ok) throw new Error(await r.text());
@@ -63,7 +65,8 @@ export async function fetchTenantsSuper(idToken) {
 
 /** Superadmin-only: register tenant */
 export async function registerTenantSuper(idToken, payload) {
-  const r = await fetch(`${API_BASE}/superadmin/tenants/register`, {
+  // FIX: Add /api prefix
+  const r = await fetch(`${API_BASE}/api/superadmin/tenants/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -78,13 +81,16 @@ export async function registerTenantSuper(idToken, payload) {
 /** Optional helper used by some guards */
 export async function isSuperadminByTokenOrMe(token) {
   if (!token) return false;
-  const r = await fetch(`${API_BASE}/superadmin/me`, {
+  // FIX: Add /api prefix
+  const r = await fetch(`${API_BASE}/api/superadmin/me`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   return r.ok;
 }
+
 export async function deleteTenantSuper(idToken, tenantId) {
-  const r = await fetch(`${API_BASE}/superadmin/tenants/${encodeURIComponent(tenantId)}`, {
+  // FIX: Add /api prefix
+  const r = await fetch(`${API_BASE}/api/superadmin/tenants/${encodeURIComponent(tenantId)}`, {
     method: "DELETE",
     headers: { Authorization: `Bearer ${idToken}` },
   });

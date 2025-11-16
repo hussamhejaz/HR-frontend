@@ -28,7 +28,7 @@ function getBase() {
   // Use process.env for Create React App compatibility
   return (
     process.env.REACT_APP_API_BASE ||
-    "http://localhost:5002"
+    "https://hr-backend-npbd.onrender.com"
   );
 }
 
