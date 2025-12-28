@@ -135,6 +135,14 @@
     "teams": "Teams",
     "allTeams": "All Teams",
     "createTeam": "Create Team",
+    "quickActions": "Quick Actions",
+    "employeeAffairs": "Employee Affairs",
+    "payrollQuick": "Payroll & Compensation",
+    "recruitmentQuick": "Recruitment",
+    "benefits": "Benefits & Rewards",
+    "orgDevelopment": "Organizational Development",
+    "talentManagement": "Talent Management",
+    "trainingLearning": "Training & Learning",
     "recruitment": "Recruitment",
     "jobs": "Open Jobs",
     "applicants": "Applicants",
@@ -214,7 +222,26 @@
       "scheduleInterview": "Schedule Interview",
       "approveLeave": "Approve Leave",
       "generateReport": "Generate Report",
-      "addNewEmployee": "Add New Employee"
+      "addNewEmployee": "Add New Employee",
+      "badge": "Quick Actions",
+      "heroTitle": "HR Mission Control",
+      "heroSubtitle": "Jump straight into any HR function with bilingual labels so teams move fast in English or Arabic.",
+      "panelTitle": "Ready to execute now",
+      "panelSubtitle": "Choose a department to start daily tasks quickly.",
+      "tags": {
+        "en": "English",
+        "ar": "Arabic",
+        "ready": "Ready"
+      },
+      "cards": {
+        "employeeAffairs": "Employee Affairs",
+        "payroll": "Payroll & Compensation",
+        "recruitment": "Recruitment",
+        "benefits": "Benefits & Rewards",
+        "orgDevelopment": "Organizational Development",
+        "talentManagement": "Talent Management",
+        "trainingLearning": "Training & Learning"
+      }
     },
     "buttons": {
       "exportReport": "Export Report",
@@ -240,6 +267,127 @@
       "emergency": "Emergency",
       "unpaid": "Unpaid",
       "other": "Other"
+    }
+  },
+
+  "actionPages": {
+    "shared": {
+      "comingSoon": "Coming soon",
+      "placeholder": "This space is reserved for your upcoming workflows."
+    },
+    "employeeAffairs": {
+      "badge": "Employee Affairs",
+      "title": "Employee Affairs",
+      "subtitle": "Keep employee records, compliance, and day-to-day requests organized in one place.",
+      "cards": {
+        "socialInsurance": { "title": "Social Insurance", "desc": "Manage enrollments, deductions, and monthly submissions." },
+        "healthInsurance": { "title": "Health Insurance", "desc": "Track providers, cards, and claims for every employee." },
+        "attendance": { "title": "Attendance & Departure", "desc": "Monitor daily in/out times and resolve exceptions fast." },
+        "archive": { "title": "Archive", "desc": "Store historical contracts, letters, and HR correspondences." }
+      }
+    },
+    "benefits": {
+      "badge": "Benefits & Rewards",
+      "title": "Benefits & Rewards",
+      "subtitle": "Design perks, manage allowances, and celebrate great work with fair rewards.",
+      "cards": {
+        "perks": { "title": "Perks & Allowances", "desc": "Outline medical, travel, and stipend programs." },
+        "wellness": { "title": "Wellness & Recognition", "desc": "Plan wellness moments and spot bonuses that boost morale." }
+      }
+    },
+    "socialInsurance": {
+      "badge": "Social Insurance",
+      "title": "Social Insurance",
+      "subtitle": "Stay compliant with timely submissions and clean records.",
+      "cards": {
+        "coverage": { "title": "Coverage & Enrollments", "desc": "Ensure everyone is enrolled and contributions are current." },
+        "forms": { "title": "Forms & Letters", "desc": "Keep templates and submission receipts organized." }
+      }
+    },
+    "healthInsurance": {
+      "badge": "Health Insurance",
+      "title": "Health Insurance",
+      "subtitle": "Manage providers, ID cards, and claims with clarity.",
+      "cards": {
+        "public": { "title": "Public Coverage", "desc": "Monitor government-linked coverage and eligibility." },
+        "external": { "title": "External Coverage", "desc": "Document private or international coverage for employees." }
+      }
+    },
+    "healthInsurancePublic": {
+      "badge": "Public Coverage",
+      "title": "Public Health Coverage",
+      "subtitle": "Stay aligned with government-linked benefits and ensure eligibility is up to date.",
+      "cards": {
+        "eligibility": { "title": "Eligibility", "desc": "Track who is eligible and what documents are required." },
+        "submissions": { "title": "Submissions", "desc": "Record requests, submissions, and approval receipts." }
+      }
+    },
+    "healthInsuranceExternal": {
+      "badge": "External Coverage",
+      "title": "External Health Coverage",
+      "subtitle": "Document private or international plans so employees know their options.",
+      "cards": {
+        "coverage": { "title": "Coverage Details", "desc": "Capture limits, networks, and waiting periods." },
+        "documentation": { "title": "Documentation", "desc": "Store policies, ID cards, and proof of coverage." }
+      }
+    },
+    "attendance": {
+      "badge": "Attendance & Departure",
+      "title": "Attendance & Departure",
+      "subtitle": "Control daily in/out, resolve exceptions, and sync with payroll.",
+      "cards": {
+        "deductions": { "title": "Deductions", "desc": "Auto-calculate penalties for late or missing punches." },
+        "entitlements": { "title": "Entitlements", "desc": "Handle extra hours and on-call credits fairly." },
+        "actual": { "title": "Actual Attendance", "desc": "Snapshot of who is in, out, or remote right now." }
+      }
+    },
+    "deductions": {
+      "badge": "Deductions",
+      "title": "Deductions",
+      "subtitle": "Apply penalties transparently and keep them compliant.",
+      "cards": {
+        "adminPenalty": {
+          "title": "Administrative Penalty",
+          "desc": "Structure deductions under internal policy or manager-issued actions.",
+          "policy": { "title": "Policy-Aligned Penalty", "desc": "Apply penalties that match internal rules and labor law." },
+          "manager": { "title": "Penalty by Direct Manager", "desc": "Allow direct managers to issue documented penalties." }
+        }
+      }
+    },
+    "archive": {
+      "badge": "Archive",
+      "title": "Archive",
+      "subtitle": "Keep historical HR records searchable and safe.",
+      "cards": {
+        "justifications": { "title": "Hiring Justifications", "desc": "Store approvals, contracts, and published notices supporting each hire." }
+      }
+    },
+    "justifications": {
+      "badge": "Hiring Justifications",
+      "title": "Hiring Justifications",
+      "subtitle": "Keep every hiring rationale with its documents so audits are easy.",
+      "cards": {
+        "contracts": { "title": "Contracts", "desc": "Upload and version employment contracts tied to each justification." },
+        "papers": { "title": "Published Notices", "desc": "Attach ads or notices published in newspapers or portals." }
+      }
+    },
+    "orgDevelopment": {
+      "badge": "Org Development",
+      "title": "Organizational Development",
+      "subtitle": "Shape the structure, roles, and progression that support growth.",
+      "cards": {
+        "structure": { "title": "Structure & Roles", "desc": "Map functions, spans of control, and reporting lines." },
+        "strategy": { "title": "Strategy & Change", "desc": "Plan change programs and communicate the why to teams." }
+      }
+    },
+    "talent": {
+      "badge": "Talent Management",
+      "title": "Talent Management",
+      "subtitle": "Guide high performers with clear paths, succession, and balanced workloads.",
+      "cards": {
+        "successions": { "title": "Succession Planning", "desc": "Highlight successors and readiness for key roles." },
+        "performance": { "title": "Performance Signals", "desc": "Pull signals from reviews and goals to act faster." }
+      }
     }
   },
 

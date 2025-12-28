@@ -54,6 +54,20 @@ import Courses        from "./pages/learning/Courses";
 import Enrollments    from "./pages/learning/Enrollments";
 import Certifications from "./pages/learning/Certifications";
 
+// Quick Action Pages
+import EmployeeAffairs from "./pages/actions/EmployeeAffairs";
+import BenefitsRewards from "./pages/actions/BenefitsRewards";
+import OrganizationalDevelopment from "./pages/actions/OrganizationalDevelopment";
+import TalentManagement from "./pages/actions/TalentManagement";
+import SocialInsurance from "./pages/actions/SocialInsurance";
+import HealthInsurance from "./pages/actions/HealthInsurance";
+import HealthInsurancePublic from "./pages/actions/HealthInsurancePublic";
+import HealthInsuranceExternal from "./pages/actions/HealthInsuranceExternal";
+import AttendanceDeparture from "./pages/actions/AttendanceDeparture";
+import Archive from "./pages/actions/Archive";
+import HiringJustifications from "./pages/actions/HiringJustifications";
+import Deductions from "./pages/actions/Deductions";
+
 // Reports & Analytics
 import TurnoverReport   from "./pages/reports/TurnoverReport";
 import DiversityMetrics from "./pages/reports/DiversityMetrics";
@@ -131,6 +145,18 @@ function App() {
 
         <Route path="dashboard">
           <Route path="overview" element={<Overview />} />
+          <Route path="employee-affairs" element={<EmployeeAffairs />} />
+          <Route path="employee-affairs/social-insurance" element={<SocialInsurance />} />
+          <Route path="employee-affairs/health-insurance" element={<HealthInsurance />} />
+          <Route path="employee-affairs/health-insurance/public" element={<HealthInsurancePublic />} />
+          <Route path="employee-affairs/health-insurance/external" element={<HealthInsuranceExternal />} />
+          <Route path="employee-affairs/attendance" element={<AttendanceDeparture />} />
+          <Route path="employee-affairs/attendance/deductions" element={<Deductions />} />
+          <Route path="employee-affairs/archive" element={<Archive />} />
+          <Route path="employee-affairs/archive/justifications" element={<HiringJustifications />} />
+          <Route path="benefits" element={<BenefitsRewards />} />
+          <Route path="org-development" element={<OrganizationalDevelopment />} />
+          <Route path="talent-management" element={<TalentManagement />} />
         </Route>
 
         <Route path="employees">
